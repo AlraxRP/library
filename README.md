@@ -1,1 +1,1 @@
-# library
+The objective of this project is to create a small library app while applying object-oriented programming concepts.
