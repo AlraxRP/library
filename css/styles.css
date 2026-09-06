@@ -3,3 +3,54 @@
     padding: 0;
     margin: 0;
 }
+
+.content
+{
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 20px;
+}
+
+.header
+{
+    padding-top: 20px;
+
+    grid-column: 2 / 3;
+
+    text-align: center;
+}
+
+.main
+{
+    background-color: burlywood;
+    padding: 15px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    gap: 15px;
+}
+
+.main .book-card
+{
+    background-color: white;
+    padding: 20px;
+}
+
+.book-card h2
+{
+    text-align: center;
+}
+
+.main ul
+{
+    list-style: none;
+
+    padding-top: 10px;
+    font-size: 1.2em;
+
+    display: grid;
+    gap: 10px;
+}
