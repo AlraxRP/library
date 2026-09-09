@@ -25,16 +25,59 @@ function addBookToLibary(title,author,publisher,genre,pageCount,status)
 
 function displayLibrary()
 {
+    const bookshelf = document.getElementById("bookshelf");
+
     for(const book of library)
     {
-        console.log(`id: ${book.id}`);
-        console.log(`title: ${book.title}`);
-        console.log(`author: ${book.author}`);
-        console.log(`publisher: ${book.publisher}`);
-        console.log(`genre: ${book.genre}`);
-        console.log(`page count: ${book.pageCount}`);
-        console.log(`status: ${book.status}`);
-        console.log("");
+        const newBookCard = document.createElement("div");
+        newBookCard.className = "book-card";
+
+        const newTitle = document.createElement("h2");
+        newTitle.textContent = book.title;
+
+        const newBookInfo = document.createElement("dl");
+        newBookInfo.className = "book-info";
+
+        const authorDT = document.createElement("dt");
+        authorDT.textContent = "Author: "
+        const authorDD = document.createElement("dd");
+        authorDD.textContent = book.author;
+
+        const publisherDT = document.createElement("dt");
+        publisherDT.textContent = "Publisher: "
+        const publisherDD = document.createElement("dd");
+        publisherDD.textContent = book.publisher;
+
+        const genreDT = document.createElement("dt");
+        genreDT.textContent = "Genre: "
+        const genreDD = document.createElement("dd");
+        genreDD.textContent = book.genre;
+
+        const pageCountDT = document.createElement("dt");
+        pageCountDT.textContent = "Page count: "
+        const pageCountDD = document.createElement("dd");
+        pageCountDD.textContent = book.pageCount;
+
+        const statusDT = document.createElement("dt");
+        statusDT.textContent = "Status: : "
+        const statusDD = document.createElement("dd");
+        statusDD.textContent = book.status;
+
+        newBookInfo.appendChild(authorDT);
+        newBookInfo.appendChild(authorDD);
+        newBookInfo.appendChild(publisherDT);
+        newBookInfo.appendChild(publisherDD);
+        newBookInfo.appendChild(genreDT);
+        newBookInfo.appendChild(genreDD);
+        newBookInfo.appendChild(pageCountDT);
+        newBookInfo.appendChild(pageCountDD);
+        newBookInfo.appendChild(statusDT);
+        newBookInfo.appendChild(statusDD);
+
+        newBookCard.appendChild(newTitle);
+        newBookCard.appendChild(newBookInfo);
+
+        bookshelf.appendChild(newBookCard);
     }
 }
 
