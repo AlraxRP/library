@@ -21,6 +21,18 @@
     text-align: center;
 }
 
+.header .btn-add-book
+{
+    font-size: 1.2em;
+
+    height: 40px;
+    width: 150px;
+    border-radius: 15px;
+    background-color: wheat;
+    
+    margin-top: 10px;
+}
+
 .main
 {
     background-color: burlywood;
@@ -59,4 +71,13 @@
 .book-info dt
 {
     font-weight: bold;
+}
+
+.book-modal
+{
+    margin: auto;
+    width: 500px;
+    height: 500px;
+
+    border-radius: 10px;
 }

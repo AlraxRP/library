@@ -81,6 +81,19 @@ function displayLibrary()
     }
 }
 
+const btnaddBook = document.getElementById("btn-add-book");
+const btnCloseModal = document.getElementById("btn-close-modal");
+const modal = document.querySelector(".book-modal");
+
+btnaddBook.addEventListener("click", () => {
+    modal.showModal();
+});
+
+btnCloseModal.addEventListener("click", () => {
+    modal.close();
+});
+
+
 addBookToLibary("libro1","autor1","edito1","terror",102,"not readed");
 addBookToLibary("libro2","autor2","edito2","accion",253,"not readed");
 
