@@ -75,9 +75,59 @@
 
 .book-modal
 {
+    font-size: 1.3em;
+
+    padding: 20px;
+
     margin: auto;
     width: 500px;
-    height: 500px;
 
     border-radius: 10px;
+}
+
+.book-modal .content
+{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.book-modal h3
+{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.book-modal form
+{
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px 10px;
+}
+
+.book-modal form label
+{
+    font-weight: bold;
+}
+
+.book-modal form .btn-container
+{
+    display: grid;
+    justify-content: center;
+
+    grid-column: 1 / 3;
+    place-items: center;
+}
+
+.book-modal button
+{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.book-modal .btn-close-modal
+{
+    margin-top: 40px;
+    justify-self: center;
 }
