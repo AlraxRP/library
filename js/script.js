@@ -81,11 +81,12 @@ function displayLibrary()
     }
 }
 
-const btnaddBook = document.getElementById("btn-add-book");
+const btnOpenModal = document.getElementById("btn-open-modal");
 const btnCloseModal = document.getElementById("btn-close-modal");
+
 const modal = document.querySelector(".book-modal");
 
-btnaddBook.addEventListener("click", () => {
+btnOpenModal.addEventListener("click", () => {
     modal.showModal();
 });
 
