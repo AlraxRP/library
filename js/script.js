@@ -25,8 +25,8 @@ function addBookToLibary(title,author,publisher,genre,pageCount,status)
 
 function displayLibrary()
 {
-    const bookshelf = document.getElementById("bookshelf");
-
+    bookshelf.replaceChildren();
+    
     for(const book of library)
     {
         const newBookCard = document.createElement("div");
@@ -81,10 +81,20 @@ function displayLibrary()
     }
 }
 
+const bookshelf = document.getElementById("bookshelf");
+
 const btnOpenModal = document.getElementById("btn-open-modal");
 const btnCloseModal = document.getElementById("btn-close-modal");
+const btnAddBook = document.getElementById("btn-add");
 
 const modal = document.querySelector(".book-modal");
+
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const publisherInput = document.getElementById("publisher");
+const genreInput = document.getElementById("genre");
+const pagesInput = document.getElementById("pages");
+const statusInput = document.getElementById("status");
 
 btnOpenModal.addEventListener("click", () => {
     modal.showModal();
@@ -94,8 +104,19 @@ btnCloseModal.addEventListener("click", () => {
     modal.close();
 });
 
+btnAddBook.addEventListener("click", (event) =>{
 
-addBookToLibary("libro1","autor1","edito1","terror",102,"not readed");
-addBookToLibary("libro2","autor2","edito2","accion",253,"not readed");
+    const txtTitle = titleInput.value;
+    const txtAuthor = authorInput.value;
+    const txtPublisher = publisherInput.value;
+    const txtGenre = genreInput.value;
+    const txtPages = pagesInput.value;
+    const txtStatus = statusInput.value;
 
-displayLibrary();
+    addBookToLibary(txtTitle,txtAuthor,txtPublisher,txtGenre,txtPages,txtStatus);
+    
+    event.preventDefault();
+    modal.close();
+
+    displayLibrary();
+});
