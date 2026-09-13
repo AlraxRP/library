@@ -31,6 +31,7 @@ function displayLibrary()
     {
         const newBookCard = document.createElement("div");
         newBookCard.className = "book-card";
+        newBookCard.dataset.id = book.id;
 
         const newTitle = document.createElement("h2");
         newTitle.textContent = book.title;
@@ -63,6 +64,16 @@ function displayLibrary()
         const statusDD = document.createElement("dd");
         statusDD.textContent = book.status;
 
+        const btnDelete = document.createElement("button");
+        btnDelete.textContent = "Delete";
+        btnDelete.className = "btnDelete";
+
+        btnDelete.addEventListener("click", () =>{
+            console.log(book.id);
+            deleteBook(book.id);
+            displayLibrary();
+        });
+
         newBookInfo.appendChild(authorDT);
         newBookInfo.appendChild(authorDD);
         newBookInfo.appendChild(publisherDT);
@@ -76,9 +87,17 @@ function displayLibrary()
 
         newBookCard.appendChild(newTitle);
         newBookCard.appendChild(newBookInfo);
+        newBookCard.appendChild(btnDelete);
 
         bookshelf.appendChild(newBookCard);
     }
+}
+
+function deleteBook(bookId)
+{
+    const index = library.findIndex(item => item.id === bookId);
+
+    library.splice(index,1);
 }
 
 const bookshelf = document.getElementById("bookshelf");
@@ -95,6 +114,8 @@ const publisherInput = document.getElementById("publisher");
 const genreInput = document.getElementById("genre");
 const pagesInput = document.getElementById("pages");
 const statusInput = document.getElementById("status");
+
+const btnDelete = document.querySelector("btnDelete");
 
 btnOpenModal.addEventListener("click", () => {
     modal.showModal();
