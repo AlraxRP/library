@@ -52,6 +52,10 @@
     background-color: white;
     border-radius: 10px;
     padding: 15px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
 }
 
 .book-card > h2
@@ -64,8 +68,15 @@
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 15px 10px;
+}
 
-    padding-top: 15px;
+.book-card .btnDelete
+{
+    background-color: #f34949; 
+    color: white;
+    justify-self: center;
+
+    margin-top: 10px;
 }
 
 .book-info dt
@@ -119,7 +130,7 @@
     place-items: center;
 }
 
-.book-modal button
+button
 {
     width: 100px;
     height: 30px;
