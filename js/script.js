@@ -64,6 +64,15 @@ function displayLibrary()
         const statusDD = document.createElement("dd");
         statusDD.textContent = book.status;
 
+        const btnChangeStatus = document.createElement("button");
+        btnChangeStatus.textContent = "Read";
+        btnChangeStatus.className = "btnChangeStatus";
+
+        btnChangeStatus.addEventListener("click", () => {
+            book.changeStatus();
+            displayLibrary();
+        });
+
         const btnDelete = document.createElement("button");
         btnDelete.textContent = "Delete";
         btnDelete.className = "btnDelete";
@@ -87,6 +96,7 @@ function displayLibrary()
 
         newBookCard.appendChild(newTitle);
         newBookCard.appendChild(newBookInfo);
+        newBookCard.appendChild(btnChangeStatus);
         newBookCard.appendChild(btnDelete);
 
         bookshelf.appendChild(newBookCard);
@@ -99,6 +109,11 @@ function deleteBook(bookId)
 
     library.splice(index,1);
 }
+
+Book.prototype.changeStatus = function()
+{
+    this.status = "readed";
+};
 
 const bookshelf = document.getElementById("bookshelf");
 
