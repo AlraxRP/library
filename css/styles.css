@@ -70,13 +70,19 @@
     gap: 15px 10px;
 }
 
+.book-card .btnChangeStatus
+{
+    background-color: wheat; 
+    justify-self: center;
+}
+
 .book-card .btnDelete
 {
     background-color: #f34949; 
     color: white;
     justify-self: center;
 
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .book-info dt
@@ -135,6 +141,7 @@ button
     width: 100px;
     height: 30px;
     border-radius: 10px;
+    font-weight: bold;
 }
 
 .book-modal .btn-close-modal
