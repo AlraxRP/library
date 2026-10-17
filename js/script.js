@@ -1,19 +1,17 @@
 const library = [];
 
-function Book(title,author,publisher,genre,pageCount,status)
+class Book
 {
-    if(!new.target)
+    constructor(title,author,publisher,genre,pageCount,status)
     {
-        throw Error("You must use the `new`operator to call the constructor ");
+        this.id = crypto.randomUUID(),
+        this.title = title,
+        this.author = author,
+        this.publisher = publisher,
+        this.genre = genre,
+        this.pageCount = pageCount,
+        this.status = status
     }
-
-    this.id = crypto.randomUUID(),
-    this.title = title,
-    this.author = author,
-    this.publisher = publisher,
-    this.genre = genre,
-    this.pageCount = pageCount,
-    this.status = status
 }
 
 function addBookToLibary(title,author,publisher,genre,pageCount,status)
